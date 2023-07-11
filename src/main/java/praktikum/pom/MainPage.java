@@ -8,10 +8,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-
 public class MainPage {
     private WebDriver driver;
-
 
     public MainPage(WebDriver driver) {
         this.driver = driver;
@@ -33,12 +31,12 @@ public class MainPage {
     //Локатор для кнопки Начинки
     private By buttonIngredient = By.xpath(".//span[text()='Начинки']");
 
-    //Локатор для текста Булки
-    private By textBun = By.xpath(".//h2[text()='Булки']");
-    //Локатор для текста Соусы
-    private By textSauce = By.xpath(".//h2[text()='Соусы']");
-    //Локатор для текста Начинки
-    private By textIngredient = By.xpath(".//h2[text()='Начинки']");
+    //Локатор для проверки, выбраны ли Булки
+    private By divBun = By.xpath(".//span[text()='Булки']/parent::div");
+    //Локатор для проверки, выбраны ли Соусы
+    private By divSauce = By.xpath(".//span[text()='Соусы']/parent::div");
+    //Локатор для проверки, выбраны ли Начинки
+    private By divIngredient = By.xpath(".//span[text()='Начинки']/parent::div");
 
     //Функция нажать на Булки
     public void clickButtonBun() {
@@ -58,19 +56,19 @@ public class MainPage {
 
     }
 
-    //Функция проверить отображаются ли Булки
-    public Boolean checktextBun() {
-        return driver.findElement(textBun).isDisplayed();
+    //Функция проверить выбраны ли Булки
+    public Boolean checkBunIsChosen() {
+        return driver.findElement(divBun).getAttribute("class").contains("current");
     }
 
-    //Функция проверить отображаются ли Соусы
-    public Boolean checktextSauce() {
-        return driver.findElement(textSauce).isDisplayed();
+    //Функция проверить выбраны ли Соусы
+    public Boolean checkSauceIsChosen() {
+        return driver.findElement(divSauce).getAttribute("class").contains("current");
     }
 
-    //Функция проверить отображаются ли Начинки
-    public Boolean checktextIngredient() {
-        return driver.findElement(textIngredient).isDisplayed();
+    //Функция проверить выбраны ли Начинки
+    public Boolean checkIngredientIsChosen() {
+        return driver.findElement(divIngredient).getAttribute("class").contains("current");
     }
 
     //Функция проверить отображается ли кнопка Оформить заказ

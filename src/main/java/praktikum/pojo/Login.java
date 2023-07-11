@@ -22,7 +22,6 @@ public class Login {
         this.password = password;
     }
 
-
     private String email;
     private String password;
 

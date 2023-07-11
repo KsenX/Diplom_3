@@ -3,7 +3,6 @@ package praktikum.dataprovider;
 import org.apache.commons.lang3.RandomStringUtils;
 import praktikum.pojo.User;
 
-
 public class UserProvider {
     public static User getRandomUser() {
         User user = new User(RandomStringUtils.randomAlphabetic(8),

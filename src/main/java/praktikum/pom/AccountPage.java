@@ -11,13 +11,9 @@ import java.time.Duration;
 public class AccountPage {
     private WebDriver driver;
 
-
     public AccountPage(WebDriver driver) {
         this.driver = driver;
     }
-
-    //Локатор для поля имя
-    private By nameInput = By.xpath(".//label[text()='Имя']/parent::div/input");
 
     //Локатор для кнопки конструктор
     private By linkConstructor = By.xpath(".//p[text()='Конструктор']");
@@ -30,11 +26,6 @@ public class AccountPage {
 
     //Локатор для информации о том, что вы этом разделе вы можете изменить свои личные данные
     private By infoYouMayChangeData = By.xpath(".//p[text()='В этом разделе вы можете изменить свои персональные данные']");
-
-    //TODO Функция проверить имя - не надо ли нормально сравнить имя
-    public Boolean checkNameInput() {
-        return driver.findElement(nameInput).isDisplayed();
-    }
 
     //Функция нажать на конструктор
     public void clickLinkConstructor() {

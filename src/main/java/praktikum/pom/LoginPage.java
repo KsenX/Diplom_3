@@ -11,7 +11,6 @@ import java.time.Duration;
 public class LoginPage {
     private WebDriver driver;
 
-
     public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -50,7 +49,6 @@ public class LoginPage {
 
     //Функция войти в аккаунт
     public void login(String email, String password) {
-
         setEmail(email);
         setPassword(password);
         clickLoginButton();

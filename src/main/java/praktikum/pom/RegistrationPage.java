@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 public class RegistrationPage {
     private WebDriver driver;
 
-
     public RegistrationPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -54,7 +53,6 @@ public class RegistrationPage {
         return driver.findElement(errorPassword).isDisplayed();
     }
 
-
     //Функция зарегистрироваться
     public void register(String name, String email, String password) {
         setName(name);
@@ -62,6 +60,5 @@ public class RegistrationPage {
         setPassword(password);
         clickRegisterButton();
     }
-
 
 }

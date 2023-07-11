@@ -16,7 +16,6 @@ public class UserClient extends BaseClient {
 
     }
 
-
     public ValidatableResponse delete(String token) {
         return given()
                 .spec(getSpec())
